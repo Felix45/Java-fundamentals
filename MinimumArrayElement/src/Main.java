@@ -28,7 +28,7 @@ public class Main {
         int[] numbersInput = new int[userInput.length];
 
         for(int i = 0; i < userInput.length; i++) {
-            numbersInput[i] = Integer.parseInt(userInput[i]);
+            numbersInput[i] = Integer.parseInt(userInput[i].trim());
         }
         return numbersInput;
     }
