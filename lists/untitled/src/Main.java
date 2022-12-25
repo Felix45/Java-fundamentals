@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -26,6 +27,7 @@ public class Main {
                     userInput = reader.nextLine();
                     List<String> newGroceryList = List.of(userInput.split(","));
                     groceryList.addAll(newGroceryList);
+                    groceryList.sort(Comparator.naturalOrder());
                     System.out.println("GroceryList: ---> "+groceryList+" size: "+groceryList.size());
                     break;
                 case 2:
