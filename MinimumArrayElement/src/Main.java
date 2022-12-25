@@ -11,11 +11,10 @@ public class Main {
     public static int findMin(int[] numbersArray) {
       int min = Integer.MAX_VALUE;
 
-      for(int element : numbersArray) {
-          if(element < min) {
+      for(int element : numbersArray)
+          if(element < min)
               min = element;
-          }
-      }
+      
       return min;
     }
 
