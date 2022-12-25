@@ -23,16 +23,26 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Add comma delimited list of grocery items:");
+                    System.out.println("Enter comma delimited list of grocery items to list:");
                     userInput = reader.nextLine();
-                    List<String> newGroceryList = List.of(userInput.split(","));
-                    groceryList.addAll(newGroceryList);
-                    groceryList.sort(Comparator.naturalOrder());
-                    System.out.println("GroceryList: ---> "+groceryList+" size: "+groceryList.size());
+                    String[] itemsToAdd = userInput.split(",");
+                    for(String item: itemsToAdd) {
+                        if(!groceryList.contains(item))
+                            groceryList.add(item.trim());
+                    }
                     break;
                 case 2:
+                    System.out.println("Enter comma delimited list of grocery items to remove:");
+                    userInput = reader.nextLine();
+                    String[] itemsToRemove = userInput.split(",");
+                    for(String item: itemsToRemove) {
+                        if(groceryList.contains(item))
+                            groceryList.remove(item);
+                    }
                     break;
             }
+            groceryList.sort(Comparator.naturalOrder());
+            System.out.println("GroceryList: ---> "+groceryList+" size: "+groceryList.size());
         }while(choice != 0);
     }
 }
